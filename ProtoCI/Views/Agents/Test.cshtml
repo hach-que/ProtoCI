@@ -1,0 +1,22 @@
+﻿@model ProtoCI.Models.AgentTestViewModel
+
+@{
+    ViewBag.Title = "Test Connection";
+}
+
+<h2>Test Connection</h2>
+@if (Model.Exception == null)
+{
+    <h3>Connection Successful</h3>
+    <p>
+        @Model.SystemIdentifier
+    </p>
+}
+else
+{
+    <h3>Connection Failed</h3>
+    <div class="alert alert-danger">
+        @Model.Exception.Message<br/>
+        @Model.Exception.StackTrace
+    </div>
+}
